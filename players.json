@@ -1,0 +1,106 @@
+"""DALLAS"""
+
+{
+    "first_name" : "Kristaps",
+    "last_name" : "Porziņģis",
+    "number" : 6,
+    "age" : 25,
+    "position" : "Center"
+}
+
+{
+    "first_name" : "Tim",
+    "last_name" : "Hardaway Jr.",
+    "number" : 11,
+    "age" : 28,
+    "position" : "Shooting Guard"
+}
+
+{
+    "first_name" : "Luka",
+    "last_name" : "Dončić",
+    "number" : 77,
+    "age" : 23,
+    "position" : "Point Guard"
+}
+
+{
+    "first_name" : "Maxi",
+    "last_name" : "Kleber",
+    "number" : 42,
+    "age" : 28,
+    "position" : "Power Forward"
+}
+
+{
+    "first_name" : "Boban",
+    "last_name" : "Davis",
+    "number" : 50,
+    "age" : 29,
+    "position" : "Small Forward"
+}
+
+
+"""LAKERS"""
+
+{
+    "first_name" : "LeBron",
+    "last_name" : "James",
+    "number" : 23,
+    "age" : 36,
+    "position" : "Power Forward"
+}
+
+{
+    "first_name" : "Dennis",
+    "last_name" : "Schröder",
+    "number" : 17,
+    "age" : 27,
+    "position" : "Point Guard"
+}
+
+{
+    "first_name" : "Anthony",
+    "last_name" : "Davis",
+    "number" : 3,
+    "age" : 27,
+    "position" : "Center"
+}
+
+{
+    "first_name" : "Alex",
+    "last_name" : "Caruso",
+    "number" : 4,
+    "age" : 26,
+    "position" : "Point Guard"
+}
+
+"""BROOKLYN"""
+{
+    "first_name" : "Kevin",
+    "last_name" : "Durant",
+    "number" : 7,
+    "age" :32,
+    "position" : "Power Forward"
+}
+{
+    "first_name" : "Kyrie",
+    "last_name" : "Irving",
+    "number" : 11,
+    "age" : 28,
+    "position" : "Point Guard"
+}
+{
+    "first_name" : "James",
+    "last_name" : "Harden",
+    "number" : 13,
+    "age" : 31,
+    "position" : "Shooting Guard"
+}
+{
+    "first_name" : "Jarrett",
+    "last_name" : "Allen",
+    "number" : 31,
+    "age" : 22,
+    "position" : "Center"
+}
