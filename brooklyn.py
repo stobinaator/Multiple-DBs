@@ -58,3 +58,6 @@ class Brooklyn(db.Model):
         
     def get_tablename(self):
         return self.__tablename__
+    
+    def get_player_id(self):
+        return self.id
