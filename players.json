@@ -5,7 +5,7 @@
     "last_name" : "Porziņģis",
     "number" : 6,
     "age" : 25,
-    "position" : "Center"
+    "position" : "C"
 }
 
 {
@@ -13,7 +13,7 @@
     "last_name" : "Hardaway Jr.",
     "number" : 11,
     "age" : 28,
-    "position" : "Shooting Guard"
+    "position" : "SG"
 }
 
 {
@@ -21,7 +21,7 @@
     "last_name" : "Dončić",
     "number" : 77,
     "age" : 23,
-    "position" : "Point Guard"
+    "position" : "PG"
 }
 
 {
@@ -29,7 +29,7 @@
     "last_name" : "Kleber",
     "number" : 42,
     "age" : 28,
-    "position" : "Power Forward"
+    "position" : "PF"
 }
 
 {
@@ -37,7 +37,15 @@
     "last_name" : "Davis",
     "number" : 50,
     "age" : 29,
-    "position" : "Small Forward"
+    "position" : "SF"
+}
+
+{
+    "first_name" : "Stoban",
+    "last_name" : "Davis",
+    "number" : 51,
+    "age" : 25,
+    "position" : "SF"
 }
 
 
@@ -48,7 +56,7 @@
     "last_name" : "James",
     "number" : 23,
     "age" : 36,
-    "position" : "Power Forward"
+    "position" : "PF"
 }
 
 {
@@ -56,7 +64,7 @@
     "last_name" : "Schröder",
     "number" : 17,
     "age" : 27,
-    "position" : "Point Guard"
+    "position" : "PG"
 }
 
 {
@@ -64,7 +72,7 @@
     "last_name" : "Davis",
     "number" : 3,
     "age" : 27,
-    "position" : "Center"
+    "position" : "C"
 }
 
 {
@@ -72,7 +80,15 @@
     "last_name" : "Caruso",
     "number" : 4,
     "age" : 26,
-    "position" : "Point Guard"
+    "position" : "PG"
+}
+
+{
+    "first_name" : "Stoban",
+    "last_name" : "Willson",
+    "number" : 28,
+    "age" : 31,
+    "position" : "SG"
 }
 
 """BROOKLYN"""
@@ -81,26 +97,40 @@
     "last_name" : "Durant",
     "number" : 7,
     "age" :32,
-    "position" : "Power Forward"
+    "position" : "PF"
 }
 {
     "first_name" : "Kyrie",
     "last_name" : "Irving",
     "number" : 11,
     "age" : 28,
-    "position" : "Point Guard"
+    "position" : "PG"
 }
 {
     "first_name" : "James",
     "last_name" : "Harden",
     "number" : 13,
     "age" : 31,
-    "position" : "Shooting Guard"
+    "position" : "SG"
 }
 {
     "first_name" : "Jarrett",
     "last_name" : "Allen",
     "number" : 31,
     "age" : 22,
-    "position" : "Center"
+    "position" : "C"
+}
+{
+    "first_name" : "Radovic",
+    "last_name" : "Davis",
+    "number" : 25,
+    "age" : 26,
+    "position" : "PF"
+}
+{
+    "first_name" : "Stoban",
+    "last_name" : "Georgievski",
+    "number" : 27,
+    "age" : 19,
+    "position" : "PG"
 }

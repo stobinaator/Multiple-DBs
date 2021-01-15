@@ -26,7 +26,7 @@ class Mavericks(db.Model):
         return {'id': self.id, 'first name': self.first_name, 
                 'last name': self.last_name, 'number': self.number,
                 'age': self.age, 'position' : self.position,
-                'team' : self.team}
+                'team' : self.team, 'table' : self.get_tablename()}
     
     def add_player(_first_name, _last_name, _number, _age, _position, _team='DAL'):
         new_player = Mavericks(first_name=_first_name, last_name=_last_name,
@@ -54,5 +54,10 @@ class Mavericks(db.Model):
     def remove_player(_id):
         Mavericks.query.filter_by(id=_id).delete()
         db.session.commit()
+        
+    def get_tablename(self):
+        return self.__tablename__
     
+    def get_player_id(self):
+        return self.id
     

@@ -124,27 +124,112 @@ def remove_mavs_player(name, id):
     
 
 
-@app.route('/all/search/<string:last_name>', methods=['GET'])
-def get_player_by_name(last_name):
+@app.route('/all/search/last/<string:last_name>', methods=['GET'])
+def get_player_by_lastname(last_name):
     
-    players_list = []
+    players_dict = {}
+    i = 0
     if Mavericks.query.filter_by(last_name=last_name).first() != None:
-        players_list.append(Mavericks.json(Mavericks.query.filter_by(last_name=last_name).first()))
+        players = Mavericks.query.filter_by(last_name=last_name).all()
+        for p in players:
+            p_json = Mavericks.json(p)
+            players_dict[i] = p_json
+            i+=1
     
     if Lakers.query.filter_by(last_name=last_name).first() != None:
-        players_list.append(Lakers.json(Lakers.query.filter_by(last_name=last_name).first()))
+        players = Lakers.query.filter_by(last_name=last_name).all()
+        for p in players:
+            p_json = Lakers.json(p)
+            players_dict[i] = p_json
+            i+=1
+        
     
     if Brooklyn.query.filter_by(last_name=last_name).first() != None:
-        players_list.append(Brooklyn.json(Brooklyn.query.filter_by(last_name=last_name).first()))
+        players = Brooklyn.query.filter_by(last_name=last_name).all()
+        for p in players:
+            p_json = Brooklyn.json(p)
+            players_dict[i] = p_json
+            i+=1
     
-    if not players_list:
+    if not players_dict:
         response = Response("There is no player with that name", status=200,
                                      mimetype='application/json')
         return response
     else:
         
-        response = Response(str(players_list), status=200, mimetype='application/json')
+        return players_dict
+        
+   
+@app.route('/all/search/first/<string:first_name>', methods=['GET'])
+def get_player_by_firstname(first_name):
+    
+    players_dict = {}
+    i = 0
+    if Mavericks.query.filter_by(first_name=first_name).first() != None:
+        players = Mavericks.query.filter_by(first_name=first_name).all()
+        for p in players:
+            p_json = Mavericks.json(p)
+            players_dict[i] = p_json
+            i+=1
+    
+    if Lakers.query.filter_by(first_name=first_name).first() != None:
+        players = Lakers.query.filter_by(first_name=first_name).all()
+        for p in players:
+            p_json = Lakers.json(p)
+            players_dict[i] = p_json
+            i+=1
+        
+    
+    if Brooklyn.query.filter_by(first_name=first_name).first() != None:
+        players = Brooklyn.query.filter_by(first_name=first_name).all()
+        for p in players:
+            p_json = Brooklyn.json(p)
+            players_dict[i] = p_json
+            i+=1
+    
+    if not players_dict:
+        response = Response("There is no player with that name", status=200,
+                                     mimetype='application/json')
         return response
+    else:
+        
+        return players_dict
+                 
+
+@app.route('/all/search/position/<string:pos>', methods=['GET'])
+def get_player_by_position(pos):
+    
+    players_dict = {}
+    i = 0
+    if Mavericks.query.filter_by(position=pos).first() != None:
+        players = Mavericks.query.filter_by(position=pos).all()
+        for p in players:
+            p_json = Mavericks.json(p)
+            players_dict[i] = p_json
+            i+=1
+    
+    if Lakers.query.filter_by(position=pos).first() != None:
+        players = Lakers.query.filter_by(position=pos).all()
+        for p in players:
+            p_json = Lakers.json(p)
+            players_dict[i] = p_json
+            i+=1
+        
+    
+    if Brooklyn.query.filter_by(position=pos).first() != None:
+        players = Brooklyn.query.filter_by(position=pos).all()
+        for p in players:
+            p_json = Brooklyn.json(p)
+            players_dict[i] = p_json
+            i+=1
+    
+    if not players_dict:
+        response = Response("There is no player with that position", status=200,
+                                     mimetype='application/json')
+        return response
+    else:
+        
+        return players_dict          
 
 
 if __name__ == '__main__':
