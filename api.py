@@ -12,6 +12,9 @@ from brooklyn import Brooklyn
 from multi import app
 from flask import request, Response, jsonify
 
+URLS_LIST = ['/roster/<string:name>', '/roster/<string:name>/<int:id>',
+              '/all/search/last/<string:last_name>','/all/search/first/<string:first_name>',
+              '/all/search/position/<string:pos>','/all/search/accomplishments/<string:information>']
 
 @app.route('/roster/<string:name>', methods=['GET'])
 def get_roster(name):
@@ -44,7 +47,8 @@ def add_player(name):
                              request_data['last_name'], 
                              request_data['number'],
                              request_data['age'], 
-                             request_data['position'])
+                             request_data['position'],
+                             request_data['info'])
         response = Response("Mavs player added to roster", status=201, 
                                                 mimetype='application/json')
         return response
@@ -54,7 +58,8 @@ def add_player(name):
                           request_data['last_name'], 
                           request_data['number'],
                           request_data['age'], 
-                          request_data['position'])
+                          request_data['position'],
+                          request_data['info'])
         response = Response("LA's player added to roster", status=201, 
                                         mimetype='application/json')
         return response
@@ -64,7 +69,8 @@ def add_player(name):
                                  request_data['last_name'], 
                                  request_data['number'],
                                  request_data['age'], 
-                                 request_data['position'])
+                                 request_data['position'],
+                                 request_data['info'])
         response = Response("Brooklyn's player added to roster", status=201, 
                                         mimetype='application/json')
         return response
@@ -78,7 +84,8 @@ def update_player(name, id):
                                         request_data['last_name'], 
                                         request_data['number'],
                                         request_data['age'],
-                                        request_data['position'])
+                                        request_data['position'],
+                                        request_data['info'])
         response = Response("Mavs player updated", status=200, 
                                             mimetype='application/json')
         return response
@@ -88,7 +95,8 @@ def update_player(name, id):
                                     request_data['last_name'], 
                                     request_data['number'],
                                     request_data['age'],
-                                    request_data['position'])
+                                    request_data['position'],
+                                    request_data['info'])
         response = Response("LA's player updated", status=200, 
                                         mimetype='application/json')
         return response
@@ -98,7 +106,8 @@ def update_player(name, id):
                                     request_data['last_name'], 
                                     request_data['number'],
                                     request_data['age'],
-                                    request_data['position'])
+                                    request_data['position'],
+                                    request_data['info'])
         response = Response("Brooklyn's player updated", status=200, 
                                         mimetype='application/json')
         return response
@@ -121,116 +130,91 @@ def remove_mavs_player(name, id):
         response = Response("Brooklyn's player removed from roster", status=200,
                                             mimetype='application/json')
         return response
-    
-
-
+          
+ 
 @app.route('/all/search/last/<string:last_name>', methods=['GET'])
 def get_player_by_lastname(last_name):
     
-    players_dict = {}
-    i = 0
-    if Mavericks.query.filter_by(last_name=last_name).first() != None:
-        players = Mavericks.query.filter_by(last_name=last_name).all()
-        for p in players:
-            p_json = Mavericks.json(p)
-            players_dict[i] = p_json
-            i+=1
+    players_list = []
+    mavs_dict = Mavericks.get_player_by_last_name(last_name)
+    la_dict = Lakers.get_player_by_last_name(last_name)
+    bk_dict= Brooklyn.get_player_by_last_name(last_name)
     
-    if Lakers.query.filter_by(last_name=last_name).first() != None:
-        players = Lakers.query.filter_by(last_name=last_name).all()
-        for p in players:
-            p_json = Lakers.json(p)
-            players_dict[i] = p_json
-            i+=1
-        
+    players_list = check_length(mavs_dict, la_dict, bk_dict)
     
-    if Brooklyn.query.filter_by(last_name=last_name).first() != None:
-        players = Brooklyn.query.filter_by(last_name=last_name).all()
-        for p in players:
-            p_json = Brooklyn.json(p)
-            players_dict[i] = p_json
-            i+=1
-    
-    if not players_dict:
-        response = Response("There is no player with that name", status=200,
+    if not players_list:
+        response = Response("There is no player with that last name", status=200,
                                      mimetype='application/json')
         return response
     else:
-        
-        return players_dict
-        
+        return jsonify({'Last Name' : players_list})
    
 @app.route('/all/search/first/<string:first_name>', methods=['GET'])
 def get_player_by_firstname(first_name):
     
-    players_dict = {}
-    i = 0
-    if Mavericks.query.filter_by(first_name=first_name).first() != None:
-        players = Mavericks.query.filter_by(first_name=first_name).all()
-        for p in players:
-            p_json = Mavericks.json(p)
-            players_dict[i] = p_json
-            i+=1
+    players_list = []
+    mavs_dict = Mavericks.get_player_by_first_name(first_name)
+    la_dict = Lakers.get_player_by_first_name(first_name)
+    bk_dict= Brooklyn.get_player_by_first_name(first_name)
     
-    if Lakers.query.filter_by(first_name=first_name).first() != None:
-        players = Lakers.query.filter_by(first_name=first_name).all()
-        for p in players:
-            p_json = Lakers.json(p)
-            players_dict[i] = p_json
-            i+=1
-        
+    players_list = check_length(mavs_dict, la_dict, bk_dict)
     
-    if Brooklyn.query.filter_by(first_name=first_name).first() != None:
-        players = Brooklyn.query.filter_by(first_name=first_name).all()
-        for p in players:
-            p_json = Brooklyn.json(p)
-            players_dict[i] = p_json
-            i+=1
-    
-    if not players_dict:
-        response = Response("There is no player with that name", status=200,
+    if not players_list:
+        response = Response("There is no player with that first name", status=200,
                                      mimetype='application/json')
         return response
-    else:
-        
-        return players_dict
+    else:   
+        return jsonify({'First Name' : players_list})
                  
 
 @app.route('/all/search/position/<string:pos>', methods=['GET'])
 def get_player_by_position(pos):
+    players_list = []
     
-    players_dict = {}
-    i = 0
-    if Mavericks.query.filter_by(position=pos).first() != None:
-        players = Mavericks.query.filter_by(position=pos).all()
-        for p in players:
-            p_json = Mavericks.json(p)
-            players_dict[i] = p_json
-            i+=1
+    mavs_dict = Mavericks.get_player_by_pos(pos)
+    la_dict = Lakers.get_player_by_pos(pos)
+    bk_dict= Brooklyn.get_player_by_pos(pos)
+    players_list = check_length(mavs_dict, la_dict, bk_dict)
     
-    if Lakers.query.filter_by(position=pos).first() != None:
-        players = Lakers.query.filter_by(position=pos).all()
-        for p in players:
-            p_json = Lakers.json(p)
-            players_dict[i] = p_json
-            i+=1
-        
-    
-    if Brooklyn.query.filter_by(position=pos).first() != None:
-        players = Brooklyn.query.filter_by(position=pos).all()
-        for p in players:
-            p_json = Brooklyn.json(p)
-            players_dict[i] = p_json
-            i+=1
-    
-    if not players_dict:
+    if not players_list:
         response = Response("There is no player with that position", status=200,
                                      mimetype='application/json')
         return response
-    else:
-        
-        return players_dict          
+    else:    
+        return jsonify({'Position' : players_list})
 
+
+@app.route('/all/search/accomplishments/<string:information>', methods=['GET'])
+def get_player_by_accomplishment(information):
+    players_list = []
+    
+    mavs_list = Mavericks.get_player_by_accomp(information)
+    lakers_list = Lakers.get_player_by_accomp(information)
+    bk_list = Brooklyn.get_player_by_accomp(information)
+
+    players_list = check_length(mavs_list, lakers_list, bk_list)
+      
+    if not players_list:
+        response = Response("There is no player with accomplishment with that name", status=200,
+                                     mimetype='application/json')
+        return response
+    else: 
+        return jsonify({'Accomplishments' : players_list}) 
+    
+@app.route('/help', methods=['GET'])
+def get_help():
+    return jsonify({'Available URLs': URLS_LIST})
+
+def check_length(mavs, la, bk):
+    players_list = []
+    if mavs != 0:
+        players_list.append(mavs)
+    if la != 0:
+        players_list.append(la)
+    if bk != 0:
+        players_list.append(bk)  
+        
+    return players_list
 
 if __name__ == '__main__':
     app.run(port=1234, debug=True)

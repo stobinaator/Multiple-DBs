@@ -20,19 +20,21 @@ class Brooklyn(db.Model):
     first_name = db.Column(db.String(50), nullable=False)
     number = db.Column(db.Integer, nullable=False)
     age = db.Column(db.Integer, nullable=False)
-    position = db.Column(db.String(50), nullable=False)
+    position = db.Column(db.String(2), nullable=False)
     team = db.Column(db.String(50), nullable=False)
+    info = db.Column(db.String(200), nullable=False)
     
     def json(self):
         return {'id': self.id, 'first name': self.first_name, 
                 'last name': self.last_name, 'number': self.number,
                 'age': self.age, 'position' : self.position,
-                'team' : self.team, 'table' : self.get_tablename()}
+                'team' : self.team, 'table' : self.get_tablename(),
+                'info': self.info}
     
-    def add_player(_first_name, _last_name, _number, _age, _position, _team='BKN'):
+    def add_player(_first_name, _last_name, _number, _age, _position,_info, _team='BKN'):
         new_player = Brooklyn(first_name=_first_name, last_name=_last_name,
                                number=_number, age=_age, position=_position,
-                               team = _team)
+                               team = _team, info=_info)
         db.session.add(new_player)
         db.session.commit()
         
@@ -42,7 +44,7 @@ class Brooklyn(db.Model):
     def get_one_player(_id):
         return [Brooklyn.json(Brooklyn.query.filter_by(id=_id).first())]
     
-    def update_player(_id, _first_name, _last_name, _number, _age, _position, _team='BKN'):
+    def update_player(_id, _first_name, _last_name, _number, _age, _position,_info, _team='BKN'):
         player_to_update = Brooklyn.query.filter_by(id=_id).first()
         player_to_update.first_name = _first_name
         player_to_update.last_name = _last_name
@@ -50,6 +52,7 @@ class Brooklyn(db.Model):
         player_to_update.age = _age
         player_to_update.position = _position
         player_to_update.team = _team
+        player_to_update.info = _info
         db.session.commit()
         
     def remove_player(_id):
@@ -61,3 +64,68 @@ class Brooklyn(db.Model):
     
     def get_player_id(self):
         return self.id
+    
+    def get_player_info(self):
+        return self.info
+    
+    def get_player_by_first_name(first):
+        i = 0
+        p_dict = {}
+        p_list = Brooklyn.query.filter_by(first_name=first).all()
+        for p in p_list:
+            p_dict[i] = Brooklyn.json(p)
+            i += 1
+            
+        if len(p_dict) == 0:
+            return 0
+        else:
+            return p_dict
+    
+    def get_player_by_last_name(last):
+        i = 0
+        p_dict = {}
+        p_list = Brooklyn.query.filter_by(last_name=last).all()
+        for p in p_list:
+            p_dict[i] = Brooklyn.json(p)
+            i += 1
+            
+        if len(p_dict) == 0:
+            return 0
+        else:
+            return p_dict
+    
+    def get_player_by_pos(pos):
+        i = 0
+        p_dict = {}
+        p_list = Brooklyn.query.filter_by(position=pos).all()
+        for p in p_list:
+            p_dict[i] = Brooklyn.json(p)
+            i += 1
+            
+        if len(p_dict) == 0:
+            return 0
+        else:
+            return p_dict
+    
+    def get_player_by_accomp(accomp):
+        i = 0
+        p_dict = {}
+        p_list = Brooklyn.get_all_players()
+        final_list = []
+        for p in p_list:
+            p_dict[i] = p
+            i+=1
+        for p in p_dict:
+            accomplishments = p_dict[p]['info']
+            accomp_list = accomplishments.split(';')
+            for a in accomp_list:   
+                if accomp in a:
+                    index = a.find(accomp)
+                    number = a[index-3:index-1]
+                    number = number.strip()
+                    if number != '0':
+                        final_list.append(p_dict[p])  
+        if len(final_list) == 0:
+            return 0
+        else:
+            return final_list
