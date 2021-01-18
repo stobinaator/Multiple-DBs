@@ -18,7 +18,7 @@ You can start by calling a GET request to `http://localhost/help`. It will displ
 
 ## Examples
 1. Getting all teams that are present: `/rosters`
-2. Getting specific team: `/rosters/Lakers`
+2. Getting specific team: `/roster/Lakers`
 3. Getting player by last name: `/all/search/last/James`
 4. Getting player by first name: `/all/search/first/LeBron`
 5. Getting player by accomplishment: `/all/search/accomplishments/MVP`
