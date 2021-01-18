@@ -9,7 +9,7 @@ Starting the program is as simple as running `python3 api.py`.</br>
 
 There are 3 team rosters: Mavericks, Lakers and Brooklyn.</br>
 There are 5 positions: PG, SG, SF, PF and C. </br>
-There are 8 accomplishments: MVP, ROY, DPOY, Scoring, 6th, AllStar, Titles, FMVP.</br>
+There are 8 accomplishments: MVP, ROY, DPOY, Scoring, 6th, AllStar, Titles, FinalsMvP.</br>
 
 You can start by calling a GET request to `http://localhost/help`. It will display all available URLs.</br>
 
