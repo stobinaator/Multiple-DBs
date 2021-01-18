@@ -128,9 +128,8 @@ class Mavericks(db.Model):
                     index = a.find(accomp)
                     number = a[index-3:index-1]
                     number = number.strip()
-                    
                     if number != '0':
-                        final_list.append(p_dict[p])  
+                        final_list.append(p_dict[p]) 
         if len(final_list) == 0:
             return 0
         else:

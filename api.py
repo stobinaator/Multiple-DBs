@@ -133,7 +133,7 @@ def get_player_by_lastname(last_name):
     players_list = check_length(mavs_dict, la_dict, bk_dict)
     
     if not players_list:
-        response = Response("There is no player with that last name", status=200,
+        response = Response("There is no player with that last name.", status=200,
                                      mimetype='application/json')
         return response
     else:
@@ -150,7 +150,7 @@ def get_player_by_firstname(first_name):
     players_list = check_length(mavs_dict, la_dict, bk_dict)
     
     if not players_list:
-        response = Response("There is no player with that first name", status=200,
+        response = Response("There is no player with that first name.", status=200,
                                      mimetype='application/json')
         return response
     else:   
@@ -167,7 +167,7 @@ def get_player_by_position(pos):
     players_list = check_length(mavs_dict, la_dict, bk_dict)
     
     if not players_list:
-        response = Response("There is no player with that position", status=200,
+        response = Response("There is no position with that name.", status=200,
                                      mimetype='application/json')
         return response
     else:    
@@ -185,7 +185,8 @@ def get_player_by_accomplishment(information):
     players_list = check_length(mavs_list, lakers_list, bk_list)
       
     if not players_list:
-        response = Response("There is no player with accomplishment with that name", status=200,
+        response = Response("There is either no player with that accomplishment \
+                            or there is not accomplishment with that name.", status=200,
                                      mimetype='application/json')
         return response
     else: 
