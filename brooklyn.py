@@ -31,12 +31,17 @@ class Brooklyn(db.Model):
                 'team' : self.team, 'table' : self.get_tablename(),
                 'info': self.info}
     
-    def add_player(_first_name, _last_name, _number, _age, _position,_info, _team='BKN'):
-        new_player = Brooklyn(first_name=_first_name, last_name=_last_name,
-                               number=_number, age=_age, position=_position,
-                               team = _team, info=_info)
+    def add_player(request_data):
+        new_player = Brooklyn(first_name=request_data['first_name'],
+                               last_name=request_data['last_name'],
+                               number=request_data['number'],
+                               age=request_data['age'],
+                               position=request_data['position'],
+                               team='BKN', info = request_data['info'])
+        
         db.session.add(new_player)
         db.session.commit()
+    
         
     def get_all_players():
         return [Brooklyn.json(player) for player in Brooklyn.query.all()]
@@ -44,16 +49,16 @@ class Brooklyn(db.Model):
     def get_one_player(_id):
         return [Brooklyn.json(Brooklyn.query.filter_by(id=_id).first())]
     
-    def update_player(_id, _first_name, _last_name, _number, _age, _position,_info, _team='BKN'):
-        player_to_update = Brooklyn.query.filter_by(id=_id).first()
-        player_to_update.first_name = _first_name
-        player_to_update.last_name = _last_name
-        player_to_update.number = _number
-        player_to_update.age = _age
-        player_to_update.position = _position
-        player_to_update.team = _team
-        player_to_update.info = _info
-        db.session.commit()
+    def update_player(_id, request_data, _team='BKN'):
+         player_to_update = Brooklyn.query.filter_by(id=_id).first()
+         player_to_update.first_name = request_data['first_name']
+         player_to_update.last_name = request_data['last_name']
+         player_to_update.number = request_data['number']
+         player_to_update.age = request_data['age']
+         player_to_update.position = request_data['position']
+         player_to_update.team = _team
+         player_to_update.info = request_data['info']
+         db.session.commit()
         
     def remove_player(_id):
         Brooklyn.query.filter_by(id=_id).delete()
