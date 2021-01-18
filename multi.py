@@ -7,11 +7,13 @@ Created on Thu Jan 14 12:06:36 2021
 """
 
 from flask import Flask 
+import pathlib
 
+path = pathlib.Path(__file__).parent.absolute()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/stobko/dev/bachelor/multiple_dbs/mavericks.db'
-app.config['SQLALCHEMY_BINDS'] = {'lal' : 'sqlite:////Users/stobko/dev/bachelor/multiple_dbs/lakers.db',
-                                  'bk' : 'sqlite:////Users/stobko/dev/bachelor/multiple_dbs/brooklyn.db'}
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{path}/mavericks.db'
+app.config['SQLALCHEMY_BINDS'] = {'lal' : f'sqlite:///{path}/lakers.db',
+                                  'bk' : f'sqlite:///{path}/brooklyn.db'}
 
