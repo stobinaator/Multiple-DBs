@@ -6,7 +6,7 @@
     "number" : 6,
     "age" : 25,
     "position" : "C",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 1 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 1 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 {
@@ -15,7 +15,7 @@
     "number" : 11,
     "age" : 28,
     "position" : "SG",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 {
@@ -24,7 +24,7 @@
     "number" : 77,
     "age" : 23,
     "position" : "PG",
-    "info" : " 0 MVP; 1 ROY; 0 DPOY; 0 Scoring; 0 6th; 1 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 1 ROY; 0 DPOY; 0 Scoring; 0 6th; 1 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 {
@@ -33,7 +33,7 @@
     "number" : 42,
     "age" : 28,
     "position" : "PF",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 {
@@ -42,7 +42,7 @@
     "number" : 50,
     "age" : 29,
     "position" : "SF",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 {
@@ -51,7 +51,7 @@
     "number" : 51,
     "age" : 25,
     "position" : "SF",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 1 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 1 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 
@@ -63,7 +63,7 @@
     "number" : 23,
     "age" : 36,
     "position" : "PF",
-    "info" : " 4 MVP; 1 ROY; 0 DPOY; 1 Scoring; 0 6th; 16 AllStar; 4 Titles; 4 FMVP"
+    "info" : " 4 MVP; 1 ROY; 0 DPOY; 1 Scoring; 0 6th; 16 AllStar; 4 Titles; 4 FinalsMvP"
 }
 
 {
@@ -72,7 +72,7 @@
     "number" : 17,
     "age" : 27,
     "position" : "PG",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 {
@@ -81,7 +81,7 @@
     "number" : 3,
     "age" : 27,
     "position" : "C",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 7 AllStar; 1 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 7 AllStar; 1 Titles; 0 FinalsMvP"
 }
 
 {
@@ -90,7 +90,7 @@
     "number" : 4,
     "age" : 26,
     "position" : "PG",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 1 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 1 Titles; 0 FinalsMvP"
 }
 
 {
@@ -99,7 +99,7 @@
     "number" : 28,
     "age" : 31,
     "position" : "SG",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
 
 """BROOKLYN"""
@@ -109,7 +109,7 @@
     "number" : 7,
     "age" :32,
     "position" : "PF",
-    "info" : " 1 MVP; 1 ROY; 0 DPOY; 4 Scoring; 0 6th; 10 AllStar; 2 Titles; 2 FMVP"
+    "info" : " 1 MVP; 1 ROY; 0 DPOY; 4 Scoring; 0 6th; 10 AllStar; 2 Titles; 2 FinalsMvP"
 }
 {
     "first_name" : "Kyrie",
@@ -117,7 +117,7 @@
     "number" : 11,
     "age" : 28,
     "position" : "PG",
-    "info" : " 0 MVP; 1 ROY; 0 DPOY; 0 Scoring; 0 6th; 6 AllStar; 1 Titles; 0 FMVP"
+    "info" : " 0 MVP; 1 ROY; 0 DPOY; 0 Scoring; 0 6th; 6 AllStar; 1 Titles; 0 FinalsMvP"
 }
 {
     "first_name" : "James",
@@ -125,7 +125,7 @@
     "number" : 13,
     "age" : 31,
     "position" : "SG",
-    "info" : " 1 MVP; 0 ROY; 0 DPOY; 3 Scoring; 1 6th; 8 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 1 MVP; 0 ROY; 0 DPOY; 3 Scoring; 1 6th; 8 AllStar; 0 Titles; 0 FinalsMvP"
 }
 {
     "first_name" : "Jarrett",
@@ -133,7 +133,7 @@
     "number" : 31,
     "age" : 22,
     "position" : "C",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
 {
     "first_name" : "Radovic",
@@ -141,7 +141,7 @@
     "number" : 25,
     "age" : 26,
     "position" : "PF",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
 {
     "first_name" : "Stoban",
@@ -149,5 +149,5 @@
     "number" : 27,
     "age" : 19,
     "position" : "PG",
-    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FMVP"
+    "info" : " 0 MVP; 0 ROY; 0 DPOY; 0 Scoring; 0 6th; 0 AllStar; 0 Titles; 0 FinalsMvP"
 }
